@@ -13,6 +13,35 @@ let apigen = {
             });
         })
     },
+    comboVendedores : (sucursal,idContainer)=>{
+        let container = document.getElementById(idContainer);
+        let str = '';
+
+        return new Promise((resolve,reject)=>{
+            axios.get('/empleados/vendedores',  {
+                params: {
+                    sucursal: sucursal,
+                    user:GlobalUsuario
+                }
+            })
+            .then((response) => {
+                const data = response.data.recordset;
+                data.map((rows)=>{
+                    str = str + `<option value='${rows.CODIGO}'>
+                                    ${rows.NOMBRE}
+                                   Tel:<b class="text-danger">${rows.TELEFONO}</b>
+                                 </option>
+                                `        
+                })
+                container.innerHTML = str;
+                resolve();
+            }, (error) => {
+                f.AvisoError('Error en la solicitud');
+                container.innerHTML = '';
+                reject();
+            });
+        })
+    }
     empleadosLogin : (sucursal,user,pass)=>{
         return new Promise((resolve,reject)=>{
             axios.get(`/empleados/login?codsucursal=${sucursal}&user=${user}&pass=${pass}`)

@@ -49,6 +49,10 @@ let classNavegar = {
                                 <i class="fal fa-shopping-cart"></i>
                                 Clientes
                             </button>
+                            <button class="btn btn-sm "  id="btnMenu2VendedorCenso">
+                                <i class="fal fa-shopping-cart"></i>
+                                Censo
+                            </button>
                             <button class="btn btn-sm " id="btnMenu2VendedorPedidos">
                                 <i class="fal fa-chart-line"></i>
                                 Logro
@@ -72,6 +76,12 @@ let classNavegar = {
                     btnMenu2VendedorClientes.addEventListener('click',()=>{
                         classNavegar.inicioVendedorListado();
                     });
+
+                    let btnMenu2VendedorCenso = document.getElementById('btnMenu2VendedorCenso');
+                    btnMenu2VendedorCenso.addEventListener('click',()=>{
+                        classNavegar.vendedorCenso();
+                    });
+
 
                  
                     /*
