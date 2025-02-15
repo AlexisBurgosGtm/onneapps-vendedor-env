@@ -58,9 +58,7 @@ function getView(){
                                 <small class=""></small>
                                 <br>
                                 <small>
-                                    <a href="https://apigen.whatsapp.com/send?phone=50257255092&text=Ayudame%20con%20la%20app%20de%20Mercados%20Efectivos...%20">
-                                        por Alexis Burgos
-                                    </a>
+                                    por Alexis Burgos (${versionApp})
                                 </small>
                             </div>
                         </form>

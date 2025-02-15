@@ -1,4 +1,4 @@
-let versionApp = '15-02-2025'
+let versionApp = '15-02-2025.2'
 let GlobalToken = '';
 let GlobalEmpnit = '';
 let GlobalEmpNombre = '';
