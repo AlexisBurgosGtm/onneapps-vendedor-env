@@ -89,6 +89,20 @@ function addListeners(){
     
 
     
+    
+    get_empresa()
+    .then((data)=>{
+        console.log('uno')
+        console.log(data);
+
+        document.getElementById('cmbSucursal').innerHTML = `<option value='${data[0].toString()}'>${data[1].toString()}</option>`; 
+    })
+    .catch((err)=>{
+        console.log('dos')
+        console.log(err)
+
+        funciones.AvisoError('No se cargo la empresa')
+    })
 
 
     
@@ -114,20 +128,7 @@ function addListeners(){
     });
 
 
-console.log('llama la empresa')
-    apigen.get_empresa()
-    .then((data)=>{
-        console.log('uno')
-        console.log(data);
 
-        document.getElementById('cmbSucursal').innerHTML = `<option value='${data[0].toString()}'>${data[1].toString()}</option>`; 
-    })
-    .catch((err)=>{
-        console.log('dos')
-        console.log(err)
-
-        funciones.AvisoError('No se cargo la empresa')
-    })
     
  
 };
@@ -191,3 +192,22 @@ function getCredenciales(){
     //Handle sign-in the way you did before.
     };
 };
+
+
+
+
+
+function get_empresa(){
+    return new Promise((resolve,reject)=>{
+        axios.get('/get_empresa')
+        .then((response) => {
+         
+            let data = response.data
+           resolve(data); 
+
+        }, (error) => {
+        
+            reject(error);
+        });
+    })
+}

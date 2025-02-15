@@ -1,5 +1,5 @@
 
-var CACHE = 'onnesales1';
+var CACHE = 'onnesales3';
 const staticAssets = [  
   './css/vendors.bundle.css',
   './css/app.bundle.css',

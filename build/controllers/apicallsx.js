@@ -1,18 +1,4 @@
 let apigen = {
-    get_empresa: ()=>{
-        return new Promise((resolve,reject)=>{
-            axios.get('/get_empresa')
-            .then((response) => {
-             
-                let data = response.data
-               resolve(data); 
-
-            }, (error) => {
-            
-                reject(error);
-            });
-        })
-    },
     comboVendedores : (sucursal,idContainer)=>{
         let container = document.getElementById(idContainer);
         let str = '';

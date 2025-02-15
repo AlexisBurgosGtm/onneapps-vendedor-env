@@ -115,8 +115,6 @@ btnPedidosPend.addEventListener('click',()=>{
     dbCargarPedidosPendientes();
 });
 
-//deshabilita los mensajes de consola
-//logger.disableLogger();
 
 
 //manejador de online, offline
