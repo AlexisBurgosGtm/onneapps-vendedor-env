@@ -27,7 +27,7 @@ let apigen = {
                 reject();
             });
         })
-    }
+    },
     empleadosLogin : (sucursal,user,pass)=>{
         return new Promise((resolve,reject)=>{
             axios.get(`/empleados/login?codsucursal=${sucursal}&user=${user}&pass=${pass}`)
