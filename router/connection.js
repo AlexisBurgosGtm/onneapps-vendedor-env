@@ -3,7 +3,11 @@
 	password: process.env.DB_PASS,
 	server: process.env.DB_HOST, 
 	database: process.env.DB_DB,
-	pool: {	max: 100,	min: 0,	idleTimeoutMillis: 30000}
+	pool: {	max: 100,	min: 0,	idleTimeoutMillis: 30000},
+	  options: {
+	    encrypt: false, // for azure
+	    trustServerCertificate: true // change to true for local dev / self-signed certs
+	  }
 };
 
 
